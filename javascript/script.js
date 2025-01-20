@@ -148,7 +148,6 @@ let cart = document.querySelectorAll(".cart");
 for (i of cart){
   i.addEventListener("click", () => {
     let v = parseInt(n_cart.textContent)+1
-    console.log("bonjour"+v)
     n_cart.textContent=v
   });
 }

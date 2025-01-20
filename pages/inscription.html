@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="box">
-        <form class="container" method="post">
+        <div>
             <div class="top-header">
                 
                 <header>Inscription</header>
@@ -33,7 +33,7 @@
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-field">
-                <input type="submit" class="submit" value="Je m'inscrit" id = "send">
+                <a href="../dash/index.html"><input type="submit" class="submit" value="Je m'inscrit" id = "send" onclick="validation()"></a>
             </div>
             <span><a href="connexion.html">vous avez déja un compte?</a></span>
             <div class="bottom">
@@ -45,20 +45,24 @@
                     <label><a href="#">mot de passe oublié?</a></label>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
     <script>
-        document.getElementById("send").addEventListener("click", () => {
+        function validation() {
             name = document.querySelector("#name").value
             email = document.querySelector("#email").value
             password1 = document.querySelector("#password1").value
             password2 = document.querySelector("#password2").value
-            if(name){
-                if(validateName(name)&& validateEmail(email) && validatePassword(password)){
-                    alert("top")
+            if(name && password && email){
+                if(!validateName(name) || !validateEmail(email) || !validatePassword(password)){
+                    return false
                 }
+                return true
+
+            }else{
+                alert("veillez remplier tous les champs")
             }
-        })
+        }
         function validateName(name) {
                 const nameRegex = /^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)*/;
                 if (!nameRegex.test(name)) {

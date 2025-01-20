@@ -458,14 +458,12 @@ aside{
     height: 100%;
     display: grid;
     grid-template-columns: repeat(7, 14%);
-    grid-template-rows: repeat(2,50%);
     overflow: hidden;
+    gap: 7px;
 }
-.block-panel:nth-child(1){
-    height: 100%;
-    border: 9px solid red;
-    margin-left: 10px;
-    box-shadow: 1px -2px 9px 2px black;
+.block-panel > div{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Ajouter une ombre subtile */
+    transition: box-shadow 0.3s ease; /* Animation de l'ombre */
 }
 .texteOnImg{
     margin-left: 100px;
